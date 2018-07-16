@@ -12,7 +12,8 @@ const ItemSchema = new Schema({
 	invoice_id: {
 		type: Schema.Types.ObjectId,
 		ref: 'Invoice'
-	}
+	},
+	updated_at: { type: Date, default: Date.now },
 });
 
 module.exports = mongoose.model('Item', ItemSchema);

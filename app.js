@@ -11,7 +11,9 @@ var clientsRouter = require('./routes/client');
 
 var app = express();
 
-const url = process.env.MONGODB_URI || "mongodb://localhost:27017/invoice"
+/* // Mongoose // */
+// const url = process.env.MONGODB_URI || "mongodb://localhost:27017/invoice"
+const url = "mongodb://localhost:27017/invoice-obrero";
 
 try {
 	mongoose.connect(url, {

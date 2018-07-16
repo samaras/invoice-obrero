@@ -12,7 +12,8 @@ const ClientSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'Company'
 	},
-	company_name: String
+	company_name: String,
+	updated_date: { type: Date, default: Date.now },
 });
 
 module.exports = mongoose.model('Client', UserSchema);

@@ -17,20 +17,24 @@ let InvoiceSchema = new Schema({
 				type: Schema.Types.ObjectId,
 				ref: 'Item'
 			},
-			description: String
+			description: String,
 		}
 	],
-	terms: String
+	terms: String,
+	updated_date: { type: Date, default: Date.now },
 });
 
 Schema.methods.total = function() {
 	this.total = 0;
-
 }
 
 Schema.methods.addClient = function(client_id) {
 	this.client_id = client_id;
 	return this.save();
+}
+
+Schema.methods.findById() {
+	return;
 }
 
 module.exports = mongoose.model('Invoice', InvoiceSchema);

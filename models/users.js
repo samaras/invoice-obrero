@@ -13,7 +13,8 @@ let UserSchema = new Schema({
 	company_id: {
 		type: Schema.Types.ObjectId,
 		ref: 'Company'
-	}
+	},
+	updated_date: { type: Date, default: Date.now },
 });
 
 module.exports = mongoose.model('User', UserSchema);
