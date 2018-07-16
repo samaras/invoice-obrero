@@ -1,44 +1,44 @@
 var express = require('express');
 var router = express.Router();
 
-	/* GET /Clients listing. */
+/* GET /Companys listing. */
 router.get('/', function(req, res, next) {
-  Client.find(function (err, clients) {
+  Company.find(function (err, companies) {
     if (err) return next(err);
-    res.json(clients);
+    res.json(companies);
   });
 });
 
-/* POST /Clients */
+/* POST /Companys */
 router.post('/', function(req, res, next) {
-  Client.create(req.body, function (err, post) {
+  Company.create(req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 });
 
-/* GET /Clients/id */
+/* GET /Companys/id */
 router.get('/:id', function(req, res, next) {
-  Client.findById(req.params.id, function (err, post) {
+  Company.findById(req.params.id, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 });
 
-/* PUT /Clients/:id */
+/* PUT /Companys/:id */
 router.put('/:id', function(req, res, next) {
-  Client.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+  Company.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 });
 
-/* DELETE /Clients/:id */
+/* DELETE /Companys/:id */
 router.delete('/:id', function(req, res, next) {
-  Client.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+  Company.findByIdAndRemove(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
-	});
+});
 
 module.exports = router;
